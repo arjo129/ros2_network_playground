@@ -1,6 +1,6 @@
 FROM ubuntu:22.04
 
-ARG SOURCE_DIR=../src
+ARG SOURCE_DIR=src
 
 RUN locale  # check for UTF-8
 
@@ -25,15 +25,15 @@ RUN  apt update &&  apt install -y \
   ros-dev-tools
 
 RUN  apt install -y \
-   python3-flake8-blind-except \
-   python3-flake8-builtins \
-   python3-flake8-class-newline \
-   python3-flake8-comprehensions \
-   python3-flake8-deprecated \
-   python3-flake8-import-order \
-   python3-flake8-quotes \
-   python3-pytest-repeat \
-   python3-pytest-rerunfailures
+  python3-flake8-blind-except \
+  python3-flake8-builtins \
+  python3-flake8-class-newline \
+  python3-flake8-comprehensions \
+  python3-flake8-deprecated \
+  python3-flake8-import-order \
+  python3-flake8-quotes \
+  python3-pytest-repeat \
+  python3-pytest-rerunfailures
 
 RUN mkdir -p /ros
 
