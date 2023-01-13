@@ -10,6 +10,9 @@ RUN  update-locale LC_ALL=en_US.UTF-8 LANG=en_US.UTF-8
 RUN export LANG=en_US.UTF-8
 ENV  DEBIAN_FRONTEND=noninteractive
 
+RUN sed --in-place --regexp-extended "s/(\/\/)(archive\.ubuntu)/\1sg.\2/" /etc/apt/sources.list && \
+	apt-get update && apt-get upgrade --yes
+
 RUN  apt install -y  software-properties-common
 RUN  add-apt-repository universe
 
